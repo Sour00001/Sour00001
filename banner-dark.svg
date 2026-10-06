@@ -308,9 +308,9 @@
   <!-- Header Breadcrumb -->
   <g transform="translate(80, 30)">
     <text class="mono-font" fill="#8b949e">
-      <tspan font-weight="700" fill="#f0f6fc">SOUR</tspan>
+      <tspan font-weight="700" fill="#f0f6fc">~/workspace</tspan>
       <tspan fill="#6e7681"> / </tspan>
-      <tspan fill="#8b949e">README.md</tspan>
+      <tspan fill="#8b949e">profile.ts</tspan>
     </text>
   </g>
 
