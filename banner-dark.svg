@@ -1,5 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 370" width="100%" height="100%" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
+    <!-- Card clip -->
+    <clipPath id="card-clip">
+      <rect x="8" y="8" width="904" height="354" rx="10" />
+    </clipPath>
+
+    <!-- Background Grid Pattern -->
+    <pattern id="grid-pattern" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#388bfd" stroke-width="1" stroke-opacity="0.35" />
+    </pattern>
+
     <!-- Progress bar clip -->
     <clipPath id="bar-clip">
       <rect x="36" y="296" width="848" height="10" rx="5" />
@@ -37,6 +47,18 @@
       @keyframes blink-dot {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
+      }
+
+      .grid-anim {
+        animation: move-grid 4s linear infinite;
+      }
+      @keyframes move-grid {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        100% {
+          transform: translate(-30px, -30px);
+        }
       }
 
       @keyframes tf_0 {
@@ -293,6 +315,13 @@
 
   <!-- Background Card Canvas -->
   <rect x="8" y="8" width="904" height="354" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1.5" />
+
+  <!-- Background Grid Lines (Animated Moving Grid) -->
+  <g clip-path="url(#card-clip)">
+    <g class="grid-anim">
+      <rect x="-40" y="-40" width="1000" height="450" fill="url(#grid-pattern)" />
+    </g>
+  </g>
 
   <!-- Terminal Header Bar -->
   <path d="M 8 18 Q 8 8 18 8 L 902 8 Q 912 8 912 18 L 912 44 L 8 44 Z" fill="#161b22" />
